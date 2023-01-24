@@ -26,7 +26,10 @@ body {
     background-image: url(/img/backgrounds/background-main.jpg);
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .navbar {
@@ -57,7 +60,7 @@ body {
 
 .logo {
     display: flex;
-    padding: 1rem 1rem 1rem 7.25rem;
+    padding: 1rem 0 1rem 5vw;
     justify-self: center;
     font-size: 1.8rem;
 
@@ -67,16 +70,21 @@ body {
     display: flex;
     flex-direction: row;
     list-style: none;
-    padding: 1rem 7.25rem 1rem 1rem;
+    padding: 1rem 7.25rem 1rem 0;
     margin: 0;
     font-size: 1.1rem;
     justify-content: space-evenly;
 }
 
+.toggle__menu {
+    display: none;
+}
+
 .menu__link {
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
     transition: 100ms;
 }
 
@@ -99,7 +107,7 @@ a {
 
 .main__card {
     display: grid;
-    margin: auto;
+    margin: 0 auto;
     grid-template-areas:
     'avatar avatar main__h1 main__h1'
     'avatar avatar main__name main__name'
@@ -179,7 +187,7 @@ a {
     width: 90vw;
     max-width: 900px;
     padding: 0 1rem 0.5rem;
-    margin: 5rem auto 0 auto;
+    margin: 0 auto ;
     border-radius: 16px;
     background-color: #7C7C7C56;
     grid-template-columns: repeat(10, auto);
@@ -218,8 +226,9 @@ a {
 
 .projects__title {
     display: flex;
+    width: 100%;
     background: #1E1E1E;
-    margin: auto;
+    margin: 0 auto;
     padding: 7rem 0 2rem;
     justify-content: center;
     font-weight: 500;
@@ -235,14 +244,16 @@ a {
     display: flex;
     width: 100%;
     height: 100%;
-    object-fit:cover;
     object-position: center;
+    align-self: center;
+    object-fit: cover;
 }
 
 .card__text {
     display: grid;
     grid-template-rows: auto auto auto;
     background-color: #204F98;
+    width: 100%;
 }
 
 .card__title-h4 {
@@ -255,7 +266,7 @@ a {
 }
 
 .card__paragraph {
-    padding: 0 5.5rem;
+    padding: 0 10%;
     font-weight: 200;
     font-size: 1rem;
     margin: 1.75rem 0 0;
@@ -264,7 +275,8 @@ a {
 }
 
 .buttons__card {
-    padding: 1.2rem 5.5rem 2rem;
+    padding: 1.2rem 0rem 2rem;
+    margin: auto;
     display: flex;
 }
 
@@ -351,7 +363,8 @@ a {
 .how-i-work__process > h3 {
     font-weight: 300;
     font-size: 1.5rem;
-    letter-spacing: 0.25rem
+    letter-spacing: 0.25rem;
+    text-align: center;
 }
 
 .about-me__p-work-process {
@@ -396,9 +409,11 @@ cursor: pointer;
     min-height: 100vh;
     background-image: url(/img/backgrounds/background-section-contact.jpg);
     background-size: cover;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-items: space-between;
+
 }
 
 .contact__h2 {
@@ -413,8 +428,7 @@ cursor: pointer;
 
 .form_container {
     display: grid;
-    width: 25%;
-    grid-template-rows: auto auto;
+    width: 100%;
     grid-template-rows: repeat(8, auto);
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.25);
@@ -426,6 +440,9 @@ cursor: pointer;
 
 .form {
     display: grid;
+    width: 95%;
+    margin: auto;
+    text-align: center;
     grid-template-rows: repeat(4, auto);
     justify-items: center;
     align-items: center;
@@ -445,7 +462,7 @@ cursor: pointer;
 }
 
 .form_input{
-    width: 100%;
+    width: 95%;
 }
 
 .form_input--message {
@@ -456,7 +473,170 @@ cursor: pointer;
 .footer {
     display:flex;
     justify-content: center;
+    align-items: center;
     font-weight: 200;
-    padding: 2rem 0 0.7rem 0;
+    text-align: center;
+}
+
+
+@media (max-width: 900px) {
     
+    .toggle__menu {
+        display: flex;
+        z-index: 110;
+        padding-right: 5vw;
+        height: 100%;
+        align-self: center;
+    }
+
+    .toggle__menu:hover {
+        cursor: pointer;
+    }
+
+    .toggle__menu:active {
+        transform: scale(90%);
+    }
+
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100vh;
+        width: 35vw;
+        right: 0;
+        top: 0;
+        font-size: 1.7rem;
+        background-color: rgba(0, 0, 0, 0.75);
+        font-weight: 100;
+        padding: 4rem 0 0 0;
+        letter-spacing: 2px;
+        transition: 500ms;
+        transform: translateX(325%);
+    }
+
+    .menu__link {
+        padding: 1rem 0;
+    }
+    
+    .card__container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .form_container {
+        width: 40%;
+    }
+
+    .menu--show {
+        display: flex;
+        transition: 500ms;
+        transform: translateX(0%);
+        }
+}
+
+@media (max-width: 768px) {
+
+    .main__card {
+        display: grid;
+        grid-template-areas:
+        'avatar avatar'
+        'main__h1 main__h1'
+        'main__name main__name'
+        'main__paragraph main__paragraph'
+        'button_contact button_projects';
+        grid-template-columns: auto auto;
+        width: auto;
+        padding-top: 9rem;
+        row-gap: 0.8rem;
+        justify-items: center;
+        text-align: center;
+        margin: 0 auto 2rem;
+    }
+    .avatar {
+        margin:auto;
+        padding: 0;
+        width: 50%;
+    }
+
+    .main__banner {
+        display: none;
+    }
+
+    .about-me__p {
+        padding: 0;
+    }
+
+    .about-me__visionmission {
+        display: grid;
+        background-color: #221e1e8c;
+        border-radius: 23px;
+        width: calc(100% - 9rem);
+        margin: 4rem auto 2rem;
+        grid-template-columns: auto;
+        padding: 0 3rem 1rem;
+        column-gap: 3rem;
+        justify-items: center;
+        text-align: justify;
+    }
+
+    .about-me__p-work-process {
+        width: 100%;
+    }
+
+        .mission {
+            grid-row: 3/4;
+        }
+
+        .eye {
+            grid-row: 4/5;
+        }
+
+        .how-i-work {
+           
+            width: calc(100% - 9rem);
+        }
+
+        .how-i-work__steps {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-self: center;
+            text-align: justify;
+        }
+
+        .how-i-work__steps > div {
+            padding: 0;
+        }
+
+        .form_container {
+            max-width: 300px;
+            width: 90vw;
+        }
+}
+
+@media (max-width: 310px) {
+
+    
+    /* .logo {
+        font-size: 1.2rem;
+    }
+
+    .card__img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .section__main {
+        background-image: url(/img/backgrounds/background-main.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    } */
+
+
 }

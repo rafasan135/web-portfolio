@@ -21,19 +21,18 @@
 
     <header>
         <navbar class="navbar">
-        <div class="logo">Rafael Santiago </div>
-            <ul class="menu">
-                <li class="menu__link"><a href="#home">Home</a></li>
-                <li class="menu__link"><a href="#last-projects">Last Projects</a></li>
-                <li class="menu__link"><a href="#about-me">About Me</a></li>
-                <li class="menu__link"><a href="#contact">Contact</a></li>
+            <div class="logo">Rafael Santiago </div>
+            <div class="toggle__menu" id="toggle__menu"><img src="img/icons/menu.svg"></div>
+            <ul class="menu" id="menu">
+                <li class="menu__link"><a href="#home" id="menu__home">Home</a></li>
+                <li class="menu__link"><a href="#last-projects" id="menu__last-projects">Last Projects</a></li>
+                <li class="menu__link"><a href="#about-me" id="menu__about-me">About Me</a></li>
+                <li class="menu__link"><a href="#contact" id="menu__contact">Contact</a></li>
             </ul>
-        </navbar>
-        
-        <div class="progress-bar">
-            <div class="bar"></div>
-        </div>
 
+            <div class="progress-bar"></div>
+            <div class="bar"></div>
+        </navbar>
         
     </header>
 
@@ -82,9 +81,10 @@
 
             <!-- Data Scientist Web -->
             
-            <div><img class="card__img" src="/img/backgrounds/data-science-web.jpg" alt="background data scientist website"></div>
+            <div class=""><img class="card__img" src="/img/backgrounds/data-science-web.jpg" alt="background data scientist website"></div>
 
             <div class="card__text">
+
                 <h4 class="card__title-h4">Website for<br> Professional Data Scientist </h4>
 
                 <p class="card__paragraph">
@@ -101,6 +101,8 @@
 
             <!-- Coach Web -->
 
+            <div><img class="card__img" src="/img/backgrounds/bg-coaching.jpg" alt="background ontologic coach website"></div>
+
             <div class="card__text card__text-coach">
                     <h4 class="card__title-h4">Website for<br> Professional Data Scientist </h4>
     
@@ -114,9 +116,7 @@
                         <button class="button button_code"> Code</button>
                         <button class="button ghost_button button_live"> Live</button>
                     </div>
-            </div> 
-                
-                <div><img class="card__img" src="/img/backgrounds/bg-coaching.jpg" alt="background ontologic coach website"></div>
+            </div>
 
                 <!-- Card Web Photographer -->
                 
@@ -146,12 +146,12 @@
         <h2 class="projects__title" id="about-me-h2">&lt;About-me&gt;</h2>
 
         <div class="about-me__visionmission">
-            <img src="/img/icons/target-icon.svg" alt="target icon">
-            <img src="/img/icons/eye.svg" alt="eye icon">
+            <img src="/img/icons/target-icon.svg" class="target" alt="target icon">
+            <img src="/img/icons/eye.svg" class="eye" alt="eye icon">
             <h3>My Mission</h3>
             <h3>My Vision</h3>
-            <p class="about-me__p">Build a website that a client required and overcome their expectations for good focused on User Experience (UX) with a User Interface (UI) needed to make attractive sites using a clean, clear, effective and efficient languages as HTML, CSS and Javascript.</p>
-            <p class="about-me__p">Maintain and improve through the new technology in the markets an effective connection based on empathy and logic with customers or stakeholder to satisfy their needs.</p>
+            <p class="about-me__p mission">Build a website that a client required and overcome their expectations for good focused on User Experience (UX) with a User Interface (UI) needed to make attractive sites using a clean, clear, effective and efficient languages as HTML, CSS and Javascript.</p>
+            <p class="about-me__p vision">Maintain and improve through the new technology in the markets an effective connection based on empathy and logic with customers or stakeholder to satisfy their needs.</p>
         </div>
 
         <div class="how-i-work">
@@ -187,7 +187,7 @@
 
     <section class="contact" id="contact">
         
-        <h2 class="contact__h2">&lt;Contact-me&gt;</h2>
+        <h2 class="projects__title">&lt;Contact-me&gt;</h2>
 
         <div class="form_container">
             <h2 class="form_title">Get in touch</h2>
@@ -202,13 +202,19 @@
                 <input type="submit" value="Submit" class="button">
             </form>
         </div>
+
+
+    <footer class="footer">
+        <p class="footer__p">Designed & Developed by Rafael Santiago © 2023</p>
+    </footer>
         
-        <footer class="footer">Designed & Developed by Rafael Santiago © 2023</footer>
     </section>
+
 
     <!-- Scripts -->
 
     <script src="js/progress.js"></script>
+    <script src="js/menu.js"></script>
     <script src="/js/show-scroll.js"></script>
     <script src="/js/typewrite-effect.js"></script>
     <script src="/js/typewrite-effect-config.js"></script>
